@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Doctores y Farmacias</title>
+    <link rel="stylesheet" href="v13.css">
+    <script>
+        function mostrarNombre(nombre) {
+            const tooltip = document.getElementById("tooltip");
+            tooltip.innerText = nombre;
+            tooltip.style.display = "block";
+        }
+
+        function ocultarNombre() {
+            document.getElementById("tooltip").style.display = "none";
+        }
+
+        document.addEventListener("mousemove", function(e) {
+            const tooltip = document.getElementById("tooltip");
+            tooltip.style.left = e.pageX + 10 + "px";
+            tooltip.style.top = e.pageY + 10 + "px";
+        });
+
+        window.addEventListener("load", () => {
+            document.querySelectorAll(".cuadro h2").forEach((titulo, i) => {
+                setTimeout(() => {
+                    titulo.classList.add("entrar");
+                }, i * 100);
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>Carnicerias</h1>
+    <div class="container">
+        <div class="cuadro" onmouseover="mostrarNombre('Carniceria Ma de la Luz')" onmouseout="ocultarNombre()">
+            <h2>Ma de la Luz</h2>
+            <a href="ca1.html"><img src="https://cdn-icons-png.flaticon.com/512/2403/2403318.png" height="170" width="180"></a>
+        </div>
+
+        <div class="cuadro" onmouseover="mostrarNombre('Carniceria Vera')" onmouseout="ocultarNombre()">
+            <h2>Vera</h2>
+            <a href="ca2.html"><img src="https://cdn-icons-png.flaticon.com/512/2403/2403318.png" height="170" width="180"></a>
+        </div>
+
+        <div class="cuadro" onmouseover="mostrarNombre('Carniceria San Miguel')" onmouseout="ocultarNombre()">
+            <h2>San Miguel</h2>
+            <a href="ca3.html"><img src="https://cdn-icons-png.flaticon.com/512/2403/2403318.png" height="170" width="180"></a>
+        </div>
+    </div>
+
+
+    <div class="botones-navegacion">
+        <button onclick="history.back()">⬅ Regresar</button>
+       <button onclick="location.href='usu.html'"> Inicio</button>
+    </div>
+
+    <div id="tooltip"></div>
+</body>
+</html>

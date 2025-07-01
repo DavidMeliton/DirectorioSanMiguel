@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>San Miguelito</title>
+  <link rel="stylesheet" href="ro.css" type="text/css">
+  <script>
+    function mostrarInfo(tipo) {
+      document.getElementById("circuloHorario").style.display = tipo === 'horario' ? 'flex' : 'none';
+      document.getElementById("circuloTelefono").style.display = tipo === 'telefono' ? 'flex' : 'none';
+      document.getElementById("circuloDescripcion").style.display = tipo === 'descripcion' ? 'flex' : 'none';
+    }
+
+    function mensajeCierre() {
+      alert("Estás saliendo de la página o cerrándola.");
+      history.back();
+    }
+  </script>
+</head>
+<body>
+  <h1>Tienda de Ropa 1</h1>
+
+  <div class="imagen-farmacia animada desde-izquierda">
+    <img src="ro1.jpeg" height="250" width="250" alt="Farmacia 1">
+  </div>
+
+  <div class="botones">
+    <button onclick="mostrarInfo('horario')">Horario</button>
+    <button onclick="mostrarInfo('telefono')">Número de Teléfono</button>
+    <button onclick="mostrarInfo('descripcion')">Direccion</button>
+  </div>
+
+  <div id="circuloHorario" class="circulo desde-izquierda" style="display: none;">
+    <p>12:00 PM - 7:00PM</p>
+  </div>
+
+  <div id="circuloTelefono" class="circulo desde-derecha" style="display: none;">
+    <p>800 668 0209</p>
+  </div>
+
+  <div id="circuloDescripcion" class="circulo desde-derecha" style="display: none;">
+    <p>Miguel Hidalgo Manzana 019, San Miguel Totocuitlapilco, 52143 Metepec, Méx.</p>
+  </div>
+
+  <div class="botones-navegacion">
+    <button onclick="mensajeCierre()">⬅ Regresar</button>
+  </div>
+
+  <div id="tooltip"></div>
+</body>
+</html>

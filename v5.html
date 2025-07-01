@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Doctores y Farmacias</title>
+    <link rel="stylesheet" href="v5.css">
+    <script>
+        function mostrarNombre(nombre) {
+            const tooltip = document.getElementById("tooltip");
+            tooltip.innerText = nombre;
+            tooltip.style.display = "block";
+        }
+
+        function ocultarNombre() {
+            document.getElementById("tooltip").style.display = "none";
+        }
+
+        document.addEventListener("mousemove", function(e) {
+            const tooltip = document.getElementById("tooltip");
+            tooltip.style.left = e.pageX + 10 + "px";
+            tooltip.style.top = e.pageY + 10 + "px";
+        });
+
+        window.addEventListener("load", () => {
+            document.querySelectorAll(".cuadro h2").forEach((titulo, i) => {
+                setTimeout(() => {
+                    titulo.classList.add("entrar");
+                }, i * 100);
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>Papelerias</h1>
+    <div class="container">
+        <div class="cuadro" onmouseover="mostrarNombre('Papelria Grillus')" onmouseout="ocultarNombre()">
+            <h2>Papelria Grillus</h2>
+            <a href="p1.html"><img src="https://i.pinimg.com/originals/ee/18/ed/ee18ed8764c1a6c8d0e44b3c063954b7.png" height="170" width="180"></a>
+        </div>
+
+        <div class="cuadro" onmouseover="mostrarNombre('Papelria Lopsan')" onmouseout="ocultarNombre()">
+            <h2>Papelria Lopsan</h2>
+            <a href="p2.html"><img src="https://i.pinimg.com/originals/ee/18/ed/ee18ed8764c1a6c8d0e44b3c063954b7.png" height="170" width="180"></a>
+        </div>
+
+        <div class="cuadro" onmouseover="mostrarNombre('Papelria La Estrella')" onmouseout="ocultarNombre()">
+            <h2>Papelria La Estrella</h2>
+            <a href="p3.html"><img src="https://i.pinimg.com/originals/ee/18/ed/ee18ed8764c1a6c8d0e44b3c063954b7.png" height="170" width="180"></a>
+        </div>
+
+        <div class="cuadro" onmouseover="mostrarNombre('Papelria y Regalos Ara')" onmouseout="ocultarNombre()">
+            <h2>Papelria y Regalos Ara</h2>
+            <a href="p4.html"><img src="https://i.pinimg.com/originals/ee/18/ed/ee18ed8764c1a6c8d0e44b3c063954b7.png" height="170" width="180"></a>
+        </div>
+
+        <div class="cuadro" onmouseover="mostrarNombre('Papelria Estrella')" onmouseout="ocultarNombre()">
+            <h2>Papelria Estrella</h2>
+            <a href="p5.html"><img src="https://i.pinimg.com/originals/ee/18/ed/ee18ed8764c1a6c8d0e44b3c063954b7.png" height="170" width="180"></a>
+        </div>
+
+    </div>
+
+
+    <div class="botones-navegacion">
+        <button onclick="history.back()">⬅ Regresar</button>
+      <button onclick="location.href='usu.html'"> Inicio</button>
+    </div>
+
+    <div id="tooltip"></div>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Galería de Categorías</title>
+  <link rel="stylesheet" href="cat.css" />
+</head>
+<body>
+  <h1>Galería de Categorías</h1>
+
+  <div class="radio-container" id="radios"></div>
+
+  <div class="preview">
+    <h2 id="categoria-titulo">Doctores</h2>
+    <a id="categoria-link" href="v3.html">
+      <img id="categoria-img" src="https://cdn-icons-png.flaticon.com/512/1085/1085413.png" alt="Categoría seleccionada" />
+    </a>
+  </div>
+
+  <script>
+    const data = {
+        "Doctores": { img: "https://cdn-icons-png.flaticon.com/512/1085/1085413.png", link: "v3.html" },
+        "Comida": { img: "Imagen de WhatsApp 2025-06-20 a las 14.24.25_1857e57b.jpg", link: "v4.html" },
+        "Papelerías": { img: "https://cdn-icons-png.flaticon.com/512/2653/2653639.png", link: "v5.html" },
+        "Tiendas": { img: "https://images.vexels.com/media/users/3/223412/isolated/preview/bd3704cf52ba23499660b8bae7221daf-dise-o-plano-de-icono-de-tienda.png", link: "v6.html" },
+        "Salones": { img: "Imagen de WhatsApp 2025-06-20 a las 14.11.34_b87bbfbe.jpg", link: "v7.html" },
+        "Telefonía": { img: "Imagen de WhatsApp 2025-06-20 a las 14.11.36_3270c649.jpg", link: "v8.html" },
+        "Escuelas": { img: "https://cdn-icons-png.flaticon.com/512/1916/1916344.png", link: "v9.html" },
+        "Barberías": { img: "https://png.pngtree.com/png-clipart/20230815/original/pngtree-barber-shop-icon-logo-vector-icon-gentleman-accessories-saloon-vector-picture-image_10710375.png", link: "v10.html" },
+        "Panaderías": { img: "https://cdn-icons-png.flaticon.com/512/992/992710.png", link: "v11.html" },
+        "Esc deportivas": { img: "https://cdn-icons-png.flaticon.com/512/857/857455.png", link: "v12.html" },
+        "Carnicerías": { img: "https://cdn-icons-png.flaticon.com/512/2230/2230407.png", link: "v13.html" },
+        "Abarrotes": { img: "https://cdn-icons-png.flaticon.com/512/135/135763.png", link: "v14.html" },
+        "Pollerías": { img: "https://www.svgrepo.com/show/148041/chicken.svg", link: "v15.html" },
+        "Capillas": { img: "https://cdn-icons-png.flaticon.com/512/6000/6000724.png", link: "v16.html" },
+        "Automotriz": { img: "https://cdn-icons-png.flaticon.com/512/2555/2555013.png", link: "v17.html" },
+        "Mueblerías": { img: "https://cdn-icons-png.flaticon.com/512/165/165674.png", link: "v18.html" },
+        "Veterinarias": { img: "Imagen de WhatsApp 2025-06-20 a las 14.11.34_f3cb2904.jpg", link: "v19.html" },
+        "Carpinterias": { img: "https://cdn-icons-png.flaticon.com/512/1973/1973757.png", link: "v20.html" },
+        "Pastelerías": { img: "https://cdn-icons-png.flaticon.com/512/1064/1064882.png", link: "v21.html" },
+        "Cromadoras": { img: "https://cdn-icons-png.flaticon.com/512/1179/1179683.png", link: "v22.html" },
+        "Gasolinerías": { img: "https://cdn-icons-png.flaticon.com/512/5900/5900170.png", link: "v23.html" },
+        "Recauderías": { img: "https://www.prontipagos.com/assets/imgs/negocios/recauderia.webp", link: "v24.html" },
+        "Anexos": { img: "Imagen de WhatsApp 2025-06-20 a las 14.11.33_aeb9ebd8.jpg", link: "v25.html" },
+        "Ferreterias": { img: "https://i1.wp.com/ferreterias-economicas.com/img/categories-logos/GRIS/ferreteria.png", link: "v26.html" },
+        "Molinos": { img: "https://cdn-icons-png.flaticon.com/512/1071/1071157.png", link: "v27.html" },
+        "Tiendas de Ropa": { img: "Imagen de WhatsApp 2025-06-20 a las 14.11.35_bb94de88.jpg", link: "v28.html" }
+      };
+
+    const radiosContainer = document.getElementById("radios");
+    const titulo = document.getElementById("categoria-titulo");
+    const imagen = document.getElementById("categoria-img");
+    const enlace = document.getElementById("categoria-link");
+
+   
+    Object.keys(data).forEach((categoria, index) => {
+      const id = `radio-${index}`;
+      const label = document.createElement("label");
+
+      label.innerHTML = `
+        <input type="radio" name="categoria" value="${categoria}" id="${id}" ${index === 0 ? "checked" : ""} />
+        <span>${categoria}</span>
+      `;
+      radiosContainer.appendChild(label);
+    });
+
+    
+    radiosContainer.addEventListener("change", (e) => {
+      const categoria = e.target.value;
+      if (data[categoria]) {
+        titulo.textContent = categoria;
+        imagen.src = data[categoria].img;
+        enlace.href = data[categoria].link;
+      }
+    });
+  </script>
+</body>
+</html>

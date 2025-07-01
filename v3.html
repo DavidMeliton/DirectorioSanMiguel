@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Doctores y Farmacias</title>
+    <link rel="stylesheet" href="v3.css">
+    <script>
+        function mostrarNombre(nombre) {
+            const tooltip = document.getElementById("tooltip");
+            tooltip.innerText = nombre;
+            tooltip.style.display = "block";
+        }
+
+        function ocultarNombre() {
+            document.getElementById("tooltip").style.display = "none";
+        }
+
+        document.addEventListener("mousemove", function(e) {
+            const tooltip = document.getElementById("tooltip");
+            tooltip.style.left = e.pageX + 10 + "px";
+            tooltip.style.top = e.pageY + 10 + "px";
+        });
+
+        window.addEventListener("load", () => {
+            document.querySelectorAll(".cuadro h2").forEach((titulo, i) => {
+                setTimeout(() => {
+                    titulo.classList.add("entrar");
+                }, i * 100);
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>Doctores y Farmacias</h1>
+    <div class="container">
+        <div class="cuadro" onmouseover="mostrarNombre('Sn Miguelito')" onmouseout="ocultarNombre()">
+            <h2>Sn Miguelito</h2>
+            <a href="f1.html"><img src="https://cdn-icons-png.flaticon.com/512/706/706200.png" height="170" width="180"></a>
+        </div>
+
+        <div class="cuadro" onmouseover="mostrarNombre('Dr Simi')" onmouseout="ocultarNombre()">
+            <h2>Dr Simi</h2>
+            <a href="f2.html"><img src="https://storage.googleapis.com/www-saludiario-com/wp-content/uploads/2022/11/47207d84-logo-simi-e1667606405832-768x768.png" height="170" width="180"></a>
+        </div>
+
+        <div class="cuadro" onmouseover="mostrarNombre('Dintely')" onmouseout="ocultarNombre()">
+            <h2>Royal Detal</h2>
+            <a href="f3.html"><img src="https://i.pinimg.com/originals/91/1c/c6/911cc60912adef3514c9d0d91ce88321.png" height="170" width="180"></a>
+        </div>
+
+        <div class="cuadro" onmouseover="mostrarNombre('Dr Alba R')" onmouseout="ocultarNombre()">
+            <h2>Dr Alba R</h2>
+            <a href="f4.html"><img src="https://cdn-icons-png.flaticon.com/512/1085/1085413.png" height="170" width="180"></a>
+        </div>
+
+        <div class="cuadro" onmouseover="mostrarNombre('Jerusalen')" onmouseout="ocultarNombre()">
+            <h2>Jerusalen</h2>
+            <a href="f5.html"><img src="https://cdn-icons-png.flaticon.com/512/706/706200.png" height="170" width="180"></a>
+        </div>
+
+        <div class="cuadro" onmouseover="mostrarNombre('KE-ICH')" onmouseout="ocultarNombre()">
+            <h2>KE-ICH</h2>
+            <a href="f6.html"><img src="https://cdn-icons-png.flaticon.com/512/439/439293.png" height="170" width="180"></a>
+        </div>
+
+        <div class="cuadro" onmouseover="mostrarNombre('Sn Miguel')" onmouseout="ocultarNombre()">
+            <h2>Sn Miguel</h2>
+            <a href="f7.html"><img src="https://cdn-icons-png.flaticon.com/512/706/706200.png" height="170" width="180"></a>
+        </div>
+
+        <div class="cuadro" onmouseover="mostrarNombre('Chiqui Dental')" onmouseout="ocultarNombre()">
+            <h2>Chiqui Dental</h2>
+            <a href="f8.html"><img src="https://i.pinimg.com/originals/91/1c/c6/911cc60912adef3514c9d0d91ce88321.png" height="170" width="180"></a>
+        </div>
+
+        <div class="cuadro" onmouseover="mostrarNombre('Clinica Sn Mi')" onmouseout="ocultarNombre()">
+            <h2>Clinica Sn Miguel</h2>
+            <a href="f9.html"><img src="https://cdn-icons-png.flaticon.com/512/9675/9675891.png" height="170" width="180"></a>
+        </div>
+
+        <div class="cuadro" onmouseover="mostrarNombre('General Ahorro')" onmouseout="ocultarNombre()">
+            <h2>General Ahorro</h2>
+            <a href="f10.html"><img src="https://cdn-icons-png.flaticon.com/512/706/706200.png" height="170" width="180"></a>
+        </div>
+
+        <div class="cuadro" onmouseover="mostrarNombre('IMSS')" onmouseout="ocultarNombre()">
+            <h2>IMSS</h2>
+            <a href="f11.html"><img src="https://cdn-icons-png.flaticon.com/512/9675/9675891.png" height="170" width="180"></a>
+        </div>
+
+        <div class="cuadro" onmouseover="mostrarNombre('San Cosme')" onmouseout="ocultarNombre()">
+            <h2>San Cosme</h2>
+            <a href="f12.html"><img src="https://cdn-icons-png.flaticon.com/512/706/706200.png" height="170" width="180"></a>
+        </div>
+
+    </div>
+
+
+    <div class="botones-navegacion">
+        <button onclick="history.back()">⬅ Regresar</button>
+        <button onclick="location.href='usu.html'"> Inicio</button>
+    </div>
+
+    <div id="tooltip"></div>
+</body>
+</html>

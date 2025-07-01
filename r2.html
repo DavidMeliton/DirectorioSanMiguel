@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>San Miguelito</title>
+  <link rel="stylesheet" href="r.css" type="text/css">
+  <script>
+    function mostrarInfo(tipo) {
+      document.getElementById("circuloHorario").style.display = tipo === 'horario' ? 'flex' : 'none';
+      document.getElementById("circuloTelefono").style.display = tipo === 'telefono' ? 'flex' : 'none';
+      document.getElementById("circuloDireccion").style.display = tipo === 'direccion' ? 'flex' : 'none';
+      document.getElementById("circuloDescripcion").style.display = tipo === 'descripcion' ? 'flex' : 'none';
+    }
+
+    function mensajeCierre() {
+      alert("Estás saliendo de la página o cerrándola.");
+      history.back();
+    }
+  </script>
+</head>
+<body>
+  <h1>EL Mercadito</h1>
+
+  <div class="imagen-farmacia animada desde-izquierda">
+    <img src="r2.jpeg" height="250" width="250" alt="Farmacia 1">
+  </div>
+
+  <div class="botones">
+    <button onclick="mostrarInfo('horario')">Horario</button>
+    <button onclick="mostrarInfo('telefono')">Número de Teléfono</button>
+    <button onclick="mostrarInfo('direccion')">Dirección</button>
+    <button onclick="mostrarInfo('descripcion')">Descripción</button>
+  </div>
+
+  <div id="circuloHorario" class="circulo desde-izquierda" style="display: none;">
+    <p>7:00 AM - 9:00PM</p>
+  </div>
+
+  <div id="circuloTelefono" class="circulo desde-derecha" style="display: none;">
+    <p>No tiene</p>
+  </div>
+
+  <div id="circuloDireccion" class="circulo desde-izquierda">
+    <a href="https://maps.app.goo.gl/c7U3Trm2gqoe3QDk9
+">Click</a>
+  </div>
+
+  <div id="circuloDescripcion" class="circulo desde-derecha" style="display: none;">
+    <p>Se venden frutas y verduras frescas para el dia o la semana</p>
+  </div>
+
+  <div class="botones-navegacion">
+    <button onclick="mensajeCierre()">⬅ Regresar</button>
+  </div>
+
+  <div id="tooltip"></div>
+</body>
+</html>
