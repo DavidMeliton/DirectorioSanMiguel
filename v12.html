@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Doctores y Farmacias</title>
+    <link rel="stylesheet" href="v12.css">
+    <script>
+        function mostrarNombre(nombre) {
+            const tooltip = document.getElementById("tooltip");
+            tooltip.innerText = nombre;
+            tooltip.style.display = "block";
+        }
+
+        function ocultarNombre() {
+            document.getElementById("tooltip").style.display = "none";
+        }
+
+        document.addEventListener("mousemove", function(e) {
+            const tooltip = document.getElementById("tooltip");
+            tooltip.style.left = e.pageX + 10 + "px";
+            tooltip.style.top = e.pageY + 10 + "px";
+        });
+
+        window.addEventListener("load", () => {
+            document.querySelectorAll(".cuadro h2").forEach((titulo, i) => {
+                setTimeout(() => {
+                    titulo.classList.add("entrar");
+                }, i * 100);
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>Escuelas Deportivas</h1>
+    <div class="container">
+        <div class="cuadro" onmouseover="mostrarNombre('Esc Deportiva Nevado')" onmouseout="ocultarNombre()">
+            <h2>Nevado</h2>
+            <a href="d1.html"><img src="https://cdn-icons-png.flaticon.com/512/5540/5540420.png" height="170" width="180"></a>
+        </div>
+
+        <div class="cuadro" onmouseover="mostrarNombre('Esc Deportiva Indde')" onmouseout="ocultarNombre()">
+            <h2>Indde</h2>
+            <a href="d2.html"><img src="https://cdn-icons-png.flaticon.com/512/5540/5540420.png" height="170" width="180"></a>
+        </div>
+
+        <div class="cuadro" onmouseover="mostrarNombre('Esc Deportiva Atlas FC')" onmouseout="ocultarNombre()">
+            <h2>Atlas CF</h2>
+            <a href="d3.html"><img src="https://cdn-icons-png.flaticon.com/512/5540/5540420.png" height="170" width="180"></a>
+        </div>
+
+        <div class="cuadro" onmouseover="mostrarNombre('Esc Deportiva Black Lions')" onmouseout="ocultarNombre()">
+            <h2>Black Lions</h2>
+            <a href="d4.html"><img src="https://cdn-icons-png.flaticon.com/512/5540/5540420.png" height="170" width="180"></a>
+        </div>        
+    </div>
+
+
+    <div class="botones-navegacion">
+        <button onclick="history.back()">⬅ Regresar</button>
+        <button onclick="location.href='usu.html'"> Inicio</button>
+    </div>
+
+    <div id="tooltip"></div>
+</body>
+</html>

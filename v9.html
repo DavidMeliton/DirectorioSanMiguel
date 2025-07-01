@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Doctores y Farmacias</title>
+    <link rel="stylesheet" href="v9.css">
+    <script>
+        function mostrarNombre(nombre) {
+            const tooltip = document.getElementById("tooltip");
+            tooltip.innerText = nombre;
+            tooltip.style.display = "block";
+        }
+
+        function ocultarNombre() {
+            document.getElementById("tooltip").style.display = "none";
+        }
+
+        document.addEventListener("mousemove", function(e) {
+            const tooltip = document.getElementById("tooltip");
+            tooltip.style.left = e.pageX + 10 + "px";
+            tooltip.style.top = e.pageY + 10 + "px";
+        });
+
+        window.addEventListener("load", () => {
+            document.querySelectorAll(".cuadro h2").forEach((titulo, i) => {
+                setTimeout(() => {
+                    titulo.classList.add("entrar");
+                }, i * 100);
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>Escuelas</h1>
+    <div class="container">
+        <div class="cuadro" onmouseover="mostrarNombre('Aquiles Serdan')" onmouseout="ocultarNombre()">
+            <h2>Aquiles Serdan</h2>
+            <a href="e1.html"><img src="https://cdn-icons-png.flaticon.com/512/5310/5310672.png" height="170" width="180"></a>
+        </div>
+
+        <div class="cuadro" onmouseover="mostrarNombre('C.A.M')" onmouseout="ocultarNombre()">
+            <h2>C.A.M</h2>
+            <a href="e2.html"><img src="https://cdn-icons-png.flaticon.com/512/5310/5310672.png" height="170" width="180"></a>
+        </div>
+
+        <div class="cuadro" onmouseover="mostrarNombre('Balance Cube')" onmouseout="ocultarNombre()">
+            <h2>Balance Cube</h2>
+            <a href="e3.html"><img src="https://cdn-icons-png.flaticon.com/512/5310/5310672.png" height="170" width="180"></a>
+        </div>
+
+        <div class="cuadro" onmouseover="mostrarNombre('Agros Prepa')" onmouseout="ocultarNombre()">
+            <h2>Agros Prepa</h2>
+            <a href="e4.html"><img src="https://cdn-icons-png.flaticon.com/512/5310/5310672.png" height="170" width="180"></a>
+        </div>
+
+        <div class="cuadro" onmouseover="mostrarNombre('Miguel Aleman')" onmouseout="ocultarNombre()">
+            <h2>Miguel Aleman</h2>
+            <a href="e5.html"><img src="https://cdn-icons-png.flaticon.com/512/5310/5310672.png" height="170" width="180"></a>
+        </div>
+
+        <div class="cuadro" onmouseover="mostrarNombre('CECYTEM')" onmouseout="ocultarNombre()">
+            <h2>CECYTEM</h2>
+            <a href="e6.html"><img src="https://cdn-icons-png.flaticon.com/512/5310/5310672.png" height="170" width="180"></a>
+        </div>
+
+    </div>
+
+
+    <div class="botones-navegacion">
+        <button onclick="history.back()">⬅ Regresar</button>
+        <button onclick="location.href='usu.html'"> Inicio</button>
+    </div>
+
+    <div id="tooltip"></div>
+</body>
+</html>

@@ -1,0 +1,61 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #000000;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  h1 {
+    color: #ff00b3;
+  }
+  
+  .radio-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+  }
+  
+  .radio-container label {
+    background: white;
+    border: 2px solid #ff00b3;
+    border-radius: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  
+  .radio-container input[type="radio"] {
+    display: none;
+  }
+  
+  .radio-container input[type="radio"]:checked + label,
+  .radio-container label:hover {
+    background-color: #ff00b3;
+    color: white;
+  }
+  
+  .preview {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+  }
+  
+  .preview img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-top: 10px;
+    transition: transform 0.3s;
+  }
+  
+  .preview img:hover {
+    transform: scale(1.05);
+  }
+  

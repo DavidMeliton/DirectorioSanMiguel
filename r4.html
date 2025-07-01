@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>San Miguelito</title>
+  <link rel="stylesheet" href="r.css" type="text/css">
+  <script>
+    function mostrarInfo(tipo) {
+      document.getElementById("circuloHorario").style.display = tipo === 'horario' ? 'flex' : 'none';
+      document.getElementById("circuloTelefono").style.display = tipo === 'telefono' ? 'flex' : 'none';
+      document.getElementById("circuloDireccion").style.display = tipo === 'direccion' ? 'flex' : 'none';
+      document.getElementById("circuloDescripcion").style.display = tipo === 'descripcion' ? 'flex' : 'none';
+    }
+
+    function mensajeCierre() {
+      alert("Estás saliendo de la página o cerrándola.");
+      history.back();
+    }
+  </script>
+</head>
+<body>
+  <h1>Recauderia</h1>
+
+  <div class="imagen-farmacia animada desde-izquierda">
+    <img src="r4.jpeg" height="250" width="250" alt="Farmacia 1">
+  </div>
+
+  <div class="botones">
+    <button onclick="mostrarInfo('horario')">Horario</button>
+    <button onclick="mostrarInfo('telefono')">Número de Teléfono</button>
+    <button onclick="mostrarInfo('direccion')">Dirección</button>
+    <button onclick="mostrarInfo('descripcion')">Descripción</button>
+  </div>
+
+  <div id="circuloHorario" class="circulo desde-izquierda" style="display: none;">
+    <p>9:00 AM - 9:00PM</p>
+  </div>
+
+  <div id="circuloTelefono" class="circulo desde-derecha" style="display: none;">
+    <p>No tiene</p>
+  </div>
+
+    <div id="circuloDireccion" class="circulo desde-izquierda">
+    <a href="https://www.google.com/maps/place/Recauderia,+Abarrotes+Y+Jugos/@19.2315781,-99.5949951,16.5z/data=!4m10!1m2!2m1!1srecauderia!3m6!1s0x85cd8b826842b44f:0x86bf522d707eedef!8m2!3d19.2294118!4d-99.5908651!15sCgpyZWNhdWRlcmlhWgwiCnJlY2F1ZGVyaWGSARlmcnVpdF9hbmRfdmVnZXRhYmxlX3N0b3JlqgFDEAEqDiIKcmVjYXVkZXJpYSgOMh8QASIblRp_bfL1kJlZWphD7u8WRZ41-b7iFCw3Bsq3Mg4QAiIKcmVjYXVkZXJpYeABAA!16s%2Fg%2F11hcfn8f4b?entry=ttu&g_ep=EgoyMDI1MDYxNy4wIKXMDSoASAFQAw%3D%3D
+">Click</a>
+  </div>
+
+  <div id="circuloDescripcion" class="circulo desde-derecha" style="display: none;">
+    <p>Se venden frutas y verduras frescas para el dia o la semana</p>
+  </div>
+
+  <div class="botones-navegacion">
+    <button onclick="mensajeCierre()">⬅ Regresar</button>
+  </div>
+
+  <div id="tooltip"></div>
+</body>
+</html>

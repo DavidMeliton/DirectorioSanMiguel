@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>San Miguelito</title>
+  <link rel="stylesheet" href="t.css" type="text/css">
+  <script>
+    function mostrarInfo(tipo) {
+      document.getElementById("circuloHorario").style.display = tipo === 'horario' ? 'flex' : 'none';
+      document.getElementById("circuloTelefono").style.display = tipo === 'telefono' ? 'flex' : 'none';
+      document.getElementById("circuloDireccion").style.display = tipo === 'direccion' ? 'flex' : 'none';
+      document.getElementById("circuloDescripcion").style.display = tipo === 'descripcion' ? 'flex' : 'none';
+    }
+
+    function mensajeCierre() {
+      alert("Estás saliendo de la página o cerrándola.");
+      history.back();
+    }
+  </script>
+</head>
+<body>
+  <h1>Tienda Providencia</h1>
+
+  <div class="imagen-farmacia animada desde-izquierda">
+    <img src="tienda4.jpeg" height="250" width="250" alt="Farmacia 1">
+  </div>
+
+  <div class="botones">
+    <button onclick="mostrarInfo('horario')">Horario</button>
+    <button onclick="mostrarInfo('telefono')">Número de Teléfono</button>
+    <button onclick="mostrarInfo('direccion')">Dirección</button>
+    <button onclick="mostrarInfo('descripcion')">Descripción</button>
+  </div>
+
+  <div id="circuloHorario" class="circulo desde-izquierda" style="display: none;">
+    <p>8:00AM-7:00Pm</p>
+  </div>
+
+  <div id="circuloTelefono" class="circulo desde-derecha" style="display: none;">
+    <p>No tiene</p>
+  </div>
+
+  <div id="circuloDireccion" class="circulo desde-izquierda" style="display: none;">
+       <a href="https://www.google.com.mx/maps/place/Providencia/@19.231088,-99.6380299,13z/data=!4m10!1m2!2m1!1stienda+providencia!3m6!1s0x85cd8b70a51c89a5:0x8eabc03e1dbbef71!8m2!3d19.2270116!4d-99.5911865!15sChJ0aWVuZGEgcHJvdmlkZW5jaWFaFCISdGllbmRhIHByb3ZpZGVuY2lhkgERY29udmVuaWVuY2Vfc3RvcmWaASNDaFpEU1VoTk1HOW5TMFZKUTBGblNVTlNjVFpQTjBobkVBRaoBUxABKhYiEnRpZW5kYSBwcm92aWRlbmNpYSgOMh8QASIbTW0oWp6-E8ImzYBiNmY1-MfsqIt06NHcdLkFMhYQAiISdGllbmRhIHByb3ZpZGVuY2lh4AEA-gEECAAQMg!16s%2Fg%2F11pvb9yv02?entry=ttu&g_ep=EgoyMDI1MDYxNy4wIKXMDSoASAFQAw%3D%3D">Click</a>
+  </div>
+
+  <div id="circuloDescripcion" class="circulo desde-derecha" style="display: none;">
+    <p>Se venden distintos productos tanto de comida como de limpieza entre otros</p>
+  </div>
+
+  <div class="imagen-farmacia animada desde-derecha">
+    <img src="tienda4.0.jpeg" height="250" width="250" alt="Farmacia 1">
+  </div>
+
+  <div class="botones-navegacion">
+    <button onclick="mensajeCierre()">⬅ Regresar</button>
+  </div>
+
+<div id="tooltip"></div>
+
+</body>
+</html>

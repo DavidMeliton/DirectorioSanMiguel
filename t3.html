@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>San Miguelito</title>
+  <link rel="stylesheet" href="t.css" type="text/css">
+  <script>
+    function mostrarInfo(tipo) {
+      document.getElementById("circuloHorario").style.display = tipo === 'horario' ? 'flex' : 'none';
+      document.getElementById("circuloTelefono").style.display = tipo === 'telefono' ? 'flex' : 'none';
+      document.getElementById("circuloDireccion").style.display = tipo === 'direccion' ? 'flex' : 'none';
+      document.getElementById("circuloDescripcion").style.display = tipo === 'descripcion' ? 'flex' : 'none';
+    }
+
+    function mensajeCierre() {
+      alert("Estás saliendo de la página o cerrándola.");
+      history.back();
+    }
+  </script>
+</head>
+<body>
+  <h1>Tienda Toto</h1>
+
+  <div class="imagen-farmacia animada desde-izquierda">
+    <img src="tienda3.0.jpeg" height="250" width="250" alt="Farmacia 1">
+  </div>
+
+  <div class="botones">
+    <button onclick="mostrarInfo('horario')">Horario</button>
+    <button onclick="mostrarInfo('telefono')">Número de Teléfono</button>
+    <button onclick="mostrarInfo('direccion')">Dirección</button>
+    <button onclick="mostrarInfo('descripcion')">Descripción</button>
+  </div>
+
+  <div id="circuloHorario" class="circulo desde-izquierda" style="display: none;">
+    <p>8:00AM-7:00Pm</p>
+  </div>
+
+  <div id="circuloTelefono" class="circulo desde-derecha" style="display: none;">
+    <p>No tiene</p>
+  </div>
+
+  <div id="circuloDireccion" class="circulo desde-izquierda" style="display: none;">
+       <a href="https://www.google.com.mx/maps/place/Toto/@19.2308486,-99.6019797,16z/data=!4m10!1m2!2m1!1stienda+toto!3m6!1s0x85cd8b83054a2951:0xdbf7d46f892d9c6d!8m2!3d19.2308489!4d-99.5929677!15sCgt0aWVuZGEgdG90b5IBEWNvbnZlbmllbmNlX3N0b3JlqgFFEAEqDyILdGllbmRhIHRvdG8oDjIfEAEiG4FqCidFLyD1CvkzrGUPQAI2drM9bEwMnkMsXzIPEAIiC3RpZW5kYSB0b3Rv4AEA!16s%2Fg%2F11btmqjjp2?entry=ttu&g_ep=EgoyMDI1MDYxNy4wIKXMDSoASAFQAw%3D%3D">Click</a>
+  </div>
+
+  <div id="circuloDescripcion" class="circulo desde-derecha" style="display: none;">
+    <p>Se venden distintos productos tanto de comida como de limpieza entre otros</p>
+  </div>
+
+  <div class="imagen-farmacia animada desde-derecha">
+    <img src="tienda3.jpeg" height="250" width="250" alt="Farmacia 1">
+  </div>
+
+  <div class="botones-navegacion">
+    <button onclick="mensajeCierre()">⬅ Regresar</button>
+  </div>
+
+<div id="tooltip"></div>
+
+</body>
+</html>

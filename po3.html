@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>San Miguelito</title>
+  <link rel="stylesheet" href="po.css" type="text/css">
+  <script>
+    function mostrarInfo(tipo) {
+        document.getElementById("circuloHorario").style.display = tipo === 'horario' ? 'flex' : 'none';
+      document.getElementById("circuloTelefono").style.display = tipo === 'telefono' ? 'flex' : 'none';
+      document.getElementById("circuloDireccion").style.display = tipo === 'direccion' ? 'flex' : 'none';
+      document.getElementById("circuloDescripcion").style.display = tipo === 'descripcion' ? 'flex' : 'none';
+    }
+
+    function mensajeCierre() {
+      alert("Estás saliendo de la página o cerrándola.");
+      history.back();
+    }
+  </script>
+</head>
+<body>
+  <h1>Mexi Pollo</h1>
+
+  <div class="imagen-farmacia animada desde-izquierda">
+    <img src="pollo2.png" height="250" width="250" alt="Farmacia 1">
+  </div>
+
+  <div class="botones">
+    <button onclick="mostrarInfo('horario')">Horario</button>
+    <button onclick="mostrarInfo('telefono')">Número de Teléfono</button>
+    <button onclick="mostrarInfo('direccion')">Dirección</button>
+    <button onclick="mostrarInfo('descripcion')">Descripción</button>
+  </div>
+
+  <div id="circuloHorario" class="circulo desde-izquierda" style="display: none;">
+    <p>9:00AM-6:00Pm</p>
+  </div>
+
+  <div id="circuloTelefono" class="circulo desde-derecha" style="display: none;">
+    <p>No tiene</p>
+  </div>
+
+<div id="circuloDireccion" class="circulo desde-izquierda">
+    <a href="https://www.google.com.mx/maps/place/MexiPollo/@19.2275942,-99.6124381,15z/data=!4m10!1m2!2m1!1smexi+pollo!3m6!1s0x85cd8b0951e1feb9:0xf2192b7a1a9ccff4!8m2!3d19.2275952!4d-99.5951978!15sCgptZXhpIHBvbGxvWgwiCm1leGkgcG9sbG-SARJjaGlja2VuX3Jlc3RhdXJhbnSqATIQATIeEAEiGjyGyMDaQCl5TGbXlVcGmEunJva_7SnyY51QMg4QAiIKbWV4aSBwb2xsb-ABAA!16s%2Fg%2F11sfx2k888?entry=ttu&g_ep=EgoyMDI1MDYxNy4wIKXMDSoASAFQAw%3D%3D">Click</a>
+  </div>
+
+  <div id="circuloDescripcion" class="circulo desde-derecha" style="display: none;">
+    <p>Se venden pollos ya sean enteros, las puras patas, muslos o pechugas</p>
+  </div>
+
+  <div class="imagen-farmacia animada desde-derecha">
+    <img src="pollo2.0.png" height="250" width="250" alt="Farmacia 1">
+  </div>
+
+  <div class="botones-navegacion">
+    <button onclick="mensajeCierre()">⬅ Regresar</button>
+  </div>
+
+<div id="tooltip"></div>
+
+</body>
+</html>
